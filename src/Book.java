@@ -14,11 +14,11 @@ public class Book {
 	/* Book Title */
 	private String title;
 	
-	/*Book Author */
+	/* Book Author */
 	private Author author;
-
-	/* Content of the book */
-	private List<String> content = new ArrayList<String>();
+	
+	/* Chapters */
+	private List<Chapter> chapters = new ArrayList<Chapter>();
 	
 	// Public Functions:
 	
@@ -37,37 +37,17 @@ public class Book {
 	}
 	
 	/**
-	 * @return the content
+	 * @return chapters
 	 */
-	public List<String> getContent() {
-		return content;
-	}
-	
-	/**
-	 * Function that returns the content of the book in a printable way
-	 * 
-	 * @return formattedContent
-	 */
-	public String getContentFormatted() {
-		String formattedContent = "";
-		formattedContent = content.get(0);			// Initialize the formatted content with the first element
-		String newLine = System.lineSeparator();
-		
-		// Iterate through content from the second element
-		for (int index = 1; index < content.size(); index++) {	
-			// Print each element with one empty line between
-			formattedContent = formattedContent + 
-								newLine + newLine + content.get(index);
-		}
-		
-		return formattedContent;
+	public List<Chapter> getChapters() {
+		return Chapters;
 	}
 
 	/**
 	 * @param content the content to set
 	 */
-	public void setContent(List<String> content_arg) {
-		this.content = content_arg;
+	public void setChapters(List<Chapters> chapters_arg) {
+		this.chapters = chapters_arg;
 	}
 
 	/**
@@ -75,22 +55,10 @@ public class Book {
 	 * 
 	 * @param title_arg => title of the book
 	 */
-	public Book(String title_arg, String author_arg) {
+	public Book(String title_arg, String author_arg, List<Chapter> chapters_arg) {
 		this.title = title_arg;
 		this.author = author_arg;
-	}
-	
-	/**
-	 * toString method for Book class
-	 */
-	@Override
-	public String toString() {
-		String tmpResult = "";
-		
-		tmpResult = this.getTitle() + "%n" + 
-					this.getContentFormatted();
-			
-		return tmpResult;
+		this.chapters = chapters_arg;
 	}
 	
 	/**
@@ -99,7 +67,7 @@ public class Book {
 	public void print() {
 		// Print the title 2 lines above the content of the book
 		System.out.println(this.getTitle() + System.lineSeparator() + System.lineSeparator());
-		System.out.println(this.getContentFormatted());
+		// TODO 
 	}
 	
 	/**
