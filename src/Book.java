@@ -14,8 +14,8 @@ public class Book {
 	/* Book Title */
 	private String title;
 	
-	/*TODO Book Author */
-	private String author;
+	/*Book Author */
+	private Author author;
 
 	/* Content of the book */
 	private List<String> content = new ArrayList<String>();
@@ -32,8 +32,8 @@ public class Book {
 	/**
 	 * @param title the title to set
 	 */
-	public void setTitle(String title) {
-		this.title = title;
+	public void setTitle(String title_arg) {
+		this.title = title_arg;
 	}
 	
 	/**
@@ -66,18 +66,18 @@ public class Book {
 	/**
 	 * @param content the content to set
 	 */
-	public void setContent(List<String> content) {
-		this.content = content;
+	public void setContent(List<String> content_arg) {
+		this.content = content_arg;
 	}
 
 	/**
 	 * Constructor for Book class
 	 * 
-	 * @param titleParam => title of the book
+	 * @param title_arg => title of the book
 	 */
-	public Book(String titleParam, String authorParam) {
-		this.title = titleParam;
-		this.author = authorParam;
+	public Book(String title_arg, String author_arg) {
+		this.title = title_arg;
+		this.author = author_arg;
 	}
 	
 	/**
@@ -105,31 +105,40 @@ public class Book {
 	/**
 	 * Function that creates a new paragraph
 	 * 
-	 * @param paragParam => paragraph text
+	 * @param parag_arg => paragraph text
 	 */
-	public void createNewParagraph(String paragParam) {
+	public void createNewParagraph(String parag_arg) {
 		//TODO Add a new paragraph to book
-		content.add(paragParam);
+		content.add(parag_arg);
 	}
 	
 	/**
 	 * Function that creates a new Image
 	 * 
-	 * @param imgParam => img to be inserted
+	 * @param img_arg => img to be inserted
 	 */
-	public void createNewImage(String imgParam) {
+	public void createNewImage(String img_arg) {
 		//TODO Add a new image to book
-		content.add(imgParam);
+		content.add(img_arg);
 	}
 	
 	/**
 	 * Function that creates a new table
 	 * 
-	 * @param tableParam => table to be inserted
+	 * @param table_arg => table to be inserted
 	 */
-	public void createNewTable(String tableParam) {
+	public void createNewTable(String table_arg) {
 		//TODO Add a new table to book
-		content.add(tableParam);
+		content.add(table_arg);
+	}
+	
+	/**
+	 * Function that adds an author to the book
+	 *
+	 * @param author_arg => author to be added
+	 */
+	public void addAuthor(Author author_arg) {
+		this.author = author_arg;
 	}
 
 }
