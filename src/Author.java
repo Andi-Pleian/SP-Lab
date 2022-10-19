@@ -1,8 +1,6 @@
 /**
  * IMPORTS
  */
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Andi
@@ -15,13 +13,6 @@ public class Author {
 	private String name;
 	
 	// Public Functions:
-	
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
 
 	/**
 	 * @param name_arg 

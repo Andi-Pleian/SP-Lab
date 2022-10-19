@@ -40,14 +40,28 @@ public class Book {
 	 * @return chapters
 	 */
 	public List<Chapter> getChapters() {
-		return Chapters;
+		return chapters;
 	}
 
 	/**
 	 * @param content the content to set
 	 */
-	public void setChapters(List<Chapters> chapters_arg) {
+	public void setChapters(List<Chapter> chapters_arg) {
 		this.chapters = chapters_arg;
+	}
+	
+	/**
+	 * Method to add a new Chapter to the list
+	 * 
+	 * @param chapterName_arg
+	 * @return 
+	 */
+	public int createChapter(String chapterName_arg) {
+		Chapter newChapter = new Chapter(chapterName_arg);
+		
+		this.chapters.add(newChapter);
+		
+		return chapters.indexOf(newChapter);
 	}
 
 	/**
@@ -55,12 +69,17 @@ public class Book {
 	 * 
 	 * @param title_arg => title of the book
 	 */
-	public Book(String title_arg, String author_arg, List<Chapter> chapters_arg) {
+	public Book(String title_arg, Author author_arg, List<Chapter> chapters_arg) {
 		this.title = title_arg;
 		this.author = author_arg;
 		this.chapters = chapters_arg;
 	}
 	
+	public Book(String string) {
+		// TODO Auto-generated constructor stub
+		this.title = string;
+	}
+
 	/**
 	 * Function that prints the book title and content
 	 */
@@ -77,7 +96,7 @@ public class Book {
 	 */
 	public void createNewParagraph(String parag_arg) {
 		//TODO Add a new paragraph to book
-		content.add(parag_arg);
+		//content.add(parag_arg);
 	}
 	
 	/**
@@ -87,7 +106,7 @@ public class Book {
 	 */
 	public void createNewImage(String img_arg) {
 		//TODO Add a new image to book
-		content.add(img_arg);
+		//content.add(img_arg);
 	}
 	
 	/**
@@ -97,7 +116,7 @@ public class Book {
 	 */
 	public void createNewTable(String table_arg) {
 		//TODO Add a new table to book
-		content.add(table_arg);
+		//content.add(table_arg);
 	}
 	
 	/**
@@ -109,6 +128,10 @@ public class Book {
 		this.author = author_arg;
 	}
 
+	public Chapter getChapter(int indexChapterOne) {
+		// TODO Auto-generated method stub
+		return this.chapters.get(indexChapterOne);
+	}
 }
 
 /**

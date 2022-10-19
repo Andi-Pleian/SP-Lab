@@ -26,7 +26,7 @@ public class Paragraph {
 	/**
 	 * @return the text of the Paragraph
 	 */
-	public String gettext() {
+	public String getText() {
 		return this.text;
 	}
 
@@ -50,3 +50,4 @@ public class Paragraph {
 /**
  * END OF FILE
  */
+
