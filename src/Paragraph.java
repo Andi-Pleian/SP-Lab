@@ -1,14 +1,12 @@
 /**
  * IMPORTS
  */
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Andi
  *
  */
-public class Paragraph {
+public class Paragraph implements Element{
 	//Private Variables:
 
 	/* Paragraph's text */
@@ -43,7 +41,24 @@ public class Paragraph {
 	 * Function that prints the Paragraph's name
 	 */
 	public void print() {
-		System.out.println(this.getText());
+		System.out.println("Paragraph: " + this.getText());
+	}
+
+	@Override
+	public int get(Element element_arg) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void add(Element element_arg) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void remove(Element element_arg) {
+		// TODO Auto-generated method stub	
 	}
 }
 

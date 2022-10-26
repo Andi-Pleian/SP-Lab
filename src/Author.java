@@ -13,7 +13,7 @@ public class Author {
 	private String name;
 	
 	// Public Functions:
-
+	
 	/**
 	 * @param name_arg 
 	 */
@@ -41,7 +41,7 @@ public class Author {
 	 * Function that prints the author's name
 	 */
 	public void print() {
-		System.out.println(this.getName());
+		System.out.println("Author: " + this.getName());
 	}
 }
 

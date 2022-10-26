@@ -6,7 +6,7 @@
  * @author Andi
  *
  */
-public class Image {
+public class Image implements Element {
 	//Private Variables:
 
 	/* Image's name */
@@ -41,7 +41,25 @@ public class Image {
 	 * Function that prints the Image's name
 	 */
 	public void print() {
-		System.out.println(this.getImageName());
+		System.out.println("Image with name: " + this.getImageName());
+	}
+
+	@Override
+	public int get(Element element_arg) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void add(Element element_arg) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void remove(Element element_arg) {
+		// TODO Auto-generated method stub
+		
 	}
 }
 

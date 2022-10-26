@@ -14,30 +14,9 @@ public class SubChapter {
 	/* Chapter's name */
 	private String name;
 	
-	/* SubChapter's paragraphs */
-	private List<Paragraph> paragraphs = new ArrayList<Paragraph>();
-	
-	/* SubChapter's images */
-	private List<Image> images = new ArrayList<Image>();
-
-	/* SubChapter's tables */
-	private List<Table> tables = new ArrayList<Table>();
+	List<Element> elementList = new ArrayList<Element>();
 	
 	// Public Functions:
-
-	/**
-	 * @return the paragraphs
-	 */
-	public List<Paragraph> getParagraphs() {
-		return paragraphs;
-	}
-
-	/**
-	 * @param paragraphs the paragraphs to set
-	 */
-	public void setParagraphs(List<Paragraph> paragraphs_arg) {
-		this.paragraphs = paragraphs_arg;
-	}
 
 	/**
 	 * @param name_arg 
@@ -52,35 +31,7 @@ public class SubChapter {
 	public String getName() {
 		return this.name;
 	}
-	
-	/**
-	 * @return the images
-	 */
-	public List<Image> getImages() {
-		return images;
-	}
 
-	/**
-	 * @param images the images to set
-	 */
-	public void setImages(List<Image> images) {
-		this.images = images;
-	}
-
-	/**
-	 * @return the tables
-	 */
-	public List<Table> getTables() {
-		return tables;
-	}
-
-	/**
-	 * @param tables the tables to set
-	 */
-	public void setTables(List<Table> tables) {
-		this.tables = tables;
-	}
-	
 	/**
 	 * Method to add a new Paragraph to the list
 	 * 
@@ -89,7 +40,7 @@ public class SubChapter {
 	public void createNewParagraph(String paragraphName_arg) {
 		Paragraph newParagraph = new Paragraph(paragraphName_arg);
 		
-		this.paragraphs.add(newParagraph);
+		this.elementList.add(newParagraph);
 	}
 	
 	/**
@@ -100,7 +51,7 @@ public class SubChapter {
 	public void createNewImage(String imageName_arg) {
 		Image newImage = new Image(imageName_arg);
 		
-		this.images.add(newImage);
+		this.elementList.add(newImage);
 	}
 	
 	/**
@@ -111,21 +62,9 @@ public class SubChapter {
 	public void createNewTable(String tableTitle_arg) {
 		Table newTable = new Table(tableTitle_arg);
 		
-		this.tables.add(newTable);
+		this.elementList.add(newTable);
 	}
 
-	/**
-	 * @param name
-	 * @param paragraphs
-	 */
-	public SubChapter(String name_arg, List<Paragraph> paragraphs_arg,
-						List<Image> images_arg,
-						List<Table> tables_arg) {
-		this.name = name_arg;
-		this.paragraphs = paragraphs_arg;
-		this.images = images_arg;
-		this.tables = tables_arg;
-	}
 	
 	public SubChapter(String subChapterName_arg) {
 		// TODO Auto-generated constructor stub
@@ -137,6 +76,10 @@ public class SubChapter {
 	 */
 	public void print() {
 		System.out.println(this.getName());
+		
+		for(Element element : elementList) {
+			element.print();
+		}
 	}
 }
 

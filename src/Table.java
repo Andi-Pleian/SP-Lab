@@ -6,7 +6,7 @@
  * @author Andi
  *
  */
-public class Table {
+public class Table implements Element {
 	//Private Variables:
 
 	/* Table's name */
@@ -41,7 +41,25 @@ public class Table {
 	 * Function that prints the Table's name
 	 */
 	public void print() {
-		System.out.println(this.getTitle());
+		System.out.println("Table's Title: " + this.getTitle());
+	}
+
+	@Override
+	public int get(Element element_arg) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void add(Element element_arg) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void remove(Element element_arg) {
+		// TODO Auto-generated method stub
+		
 	}
 }
 
