@@ -1,61 +1,93 @@
+import java.util.concurrent.TimeUnit;
+
 /**
  * IMPORTS
  */
+// No Imports
 
 /**
+ * CLASS IMAGE
  * @author Andi
- *
- */
+ **/
 public class Image implements Element {
-	//Private Variables:
-
-	/* Image's name */
-	private String imageName;
+/************************************************************************************************************
+ * 											Private Variables
+ ************************************************************************************************************/
+	/* Image's content */
+	private String imageContent;
 	
-	// Public Functions:
+	/* Image's URL */
+	private String url;
+	
+/************************************************************************************************************
+ * 											Public Functions
+ ************************************************************************************************************/
 
 	/**
+	 * SET NAME
 	 * @param imageName_arg 
 	 */
-	public void setImageName(String imageName_arg) {
-		this.imageName = imageName_arg;
+	public void setImageName(String url_arg) {
+		this.url = url_arg;
 	}
 	
 	/**
+	 * GET NAME
 	 * @return the name of the Image
 	 */
 	public String getImageName() {
-		return this.imageName;
+		return this.url;
 	}
 
 	/**
-	 * Constructor for Image class
+	 * CONSTRUCTOR
 	 * 
 	 * @param name_arg => name of the chapter
 	 */
-	public Image(String imageName_arg) {
-		this.imageName = imageName_arg;
+	public Image(String url_arg) {
+		this.url = url_arg;
+		try {
+			TimeUnit.SECONDS.sleep(5);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	/**
-	 * Function that prints the Image's name
+	 * PRINT
 	 */
 	public void print() {
-		System.out.println("Image with name: " + this.getImageName());
+		System.out.println("Image with name: " + this.url);
+	}
+	
+	/**
+	 * 
+	 */
+	public void content() {
+		// TODO
 	}
 
+	/**
+	 * INHERITED GET
+	 */
 	@Override
 	public int get(Element element_arg) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
+	
+	/**
+	 * INHERITED ADD
+	 */
 	@Override
 	public void add(Element element_arg) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
+	/**
+	 * INHERITED REMOVE
+	 */
 	@Override
 	public void remove(Element element_arg) {
 		// TODO Auto-generated method stub
