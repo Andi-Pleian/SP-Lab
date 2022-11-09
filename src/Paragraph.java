@@ -7,10 +7,10 @@
  *
  */
 public class Paragraph implements Element{
-	//Private Variables:
+	//Public Variables:
 
 	/* Paragraph's text */
-	private String text;
+	public String text;
 	
 	// Public Functions:
 
@@ -59,6 +59,10 @@ public class Paragraph implements Element{
 	@Override
 	public void remove(Element element_arg) {
 		// TODO Auto-generated method stub	
+	}
+
+	public void setAlignStrategy(AlignStrategy alignStrategy_arg) {
+		this.text = alignStrategy_arg.render(this.text);
 	}
 }
 
