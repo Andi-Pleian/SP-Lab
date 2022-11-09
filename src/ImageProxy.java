@@ -129,4 +129,9 @@ public class ImageProxy implements Element {
 
 	}
 
+	@Override
+	public void accept(Visitor visitor_arg) {
+		visitor_arg.visitProxyImage(this);
+	}
+
 }

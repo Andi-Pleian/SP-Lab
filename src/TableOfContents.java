@@ -38,6 +38,11 @@ public class TableOfContents implements Element {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void accept(Visitor visitor_arg) {
+		visitor_arg.visitTableOfContents(this);
+	}
 	
 	
 

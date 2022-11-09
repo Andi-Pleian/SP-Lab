@@ -64,6 +64,12 @@ public class Paragraph implements Element{
 	public void setAlignStrategy(AlignStrategy alignStrategy_arg) {
 		this.text = alignStrategy_arg.render(this.text);
 	}
+
+	@Override
+	public void accept(Visitor visitor_arg) {
+		// TODO Auto-generated method stub
+		visitor_arg.visitParagraph(this);
+	}
 }
 
 /**

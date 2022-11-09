@@ -12,4 +12,6 @@ public interface Element {
     public int get(Element element_arg);
     public void add(Element element_arg);
     public void remove(Element element_arg); 
+    
+    public void accept(Visitor visitor_arg);
 }

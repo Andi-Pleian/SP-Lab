@@ -61,6 +61,11 @@ public class Table implements Element {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void accept(Visitor visitor_arg) {
+		visitor_arg.visitTable(this);
+	}
 }
 
 /**

@@ -50,4 +50,9 @@ public class Section implements Element{
     }
     
 	public Section() {}
+
+	@Override
+	public void accept(Visitor visitor_arg) {
+		visitor_arg.visitSection(this);
+	}
 }
