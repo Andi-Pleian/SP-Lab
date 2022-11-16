@@ -54,5 +54,9 @@ public class Section implements Element{
 	@Override
 	public void accept(Visitor visitor_arg) {
 		visitor_arg.visitSection(this);
+		
+		for(Element el:elementList) {
+			el.accept(visitor_arg);
+		}
 	}
 }
