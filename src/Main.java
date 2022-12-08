@@ -10,6 +10,9 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) throws Exception {
+		Book myBook = new Book("My Book");
+		DocumentManager.getInstance().setBook(myBook);
+		
 		Section cap1 = new Section("Capitolul 1");
 		
 		Paragraph p1 = new Paragraph("Paragraph 1");
@@ -25,10 +28,12 @@ public class Main {
 		cap1.add(new Image("ImageTwo"));
 		cap1.add(new Paragraph("Some text"));
 		cap1.add(new Table("Table 1"));
-		
+
 		BookStatistics stats = new BookStatistics();
 		cap1.accept(stats);
 		stats.printStatistics();
+
+		DocumentManager.getInstance().getBook().print();
 	}
 }
 
